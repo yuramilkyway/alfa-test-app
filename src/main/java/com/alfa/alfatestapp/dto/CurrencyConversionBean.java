@@ -1,56 +1,75 @@
 package com.alfa.alfatestapp.dto;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 public class CurrencyConversionBean {
-    private Long id;
-    private String from;
-    private String to;
-    private BigDecimal conversionMultiple;
-    private BigDecimal quantity;
-    private BigDecimal totalCalculatedAmount;
-    private int port;
+    private String disclaimer;
+    private String license;
+    private String timestamp;
+    private String base;
+    private Map<String, BigDecimal> rates;
+
+    public CurrencyConversionBean(String disclaimer, String license, String timestamp, String base, Map<String, BigDecimal> rates) {
+        this.disclaimer = disclaimer;
+        this.license = license;
+        this.timestamp = timestamp;
+        this.base = base;
+        this.rates = rates;
+    }
 
     public CurrencyConversionBean() {
     }
 
-    public CurrencyConversionBean(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
-                                  BigDecimal totalCalculatedAmount, int port) {
-        super();
-        this.id = id;
-        this.from = from;
-        this.to = to;
-        this.conversionMultiple = conversionMultiple;
-        this.quantity = quantity;
-        this.totalCalculatedAmount = totalCalculatedAmount;
-        this.port = port;
+    public String getDisclaimer() {
+        return disclaimer;
     }
 
-    public Long getId() {
-        return id;
+    public void setDisclaimer(String disclaimer) {
+        this.disclaimer = disclaimer;
     }
 
-    public String getFrom() {
-        return from;
+    public String getLicense() {
+        return license;
     }
 
-    public String getTo() {
-        return to;
+    public void setLicense(String license) {
+        this.license = license;
     }
 
-    public BigDecimal getConversionMultiple() {
-        return conversionMultiple;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public BigDecimal getQuantity() {
-        return quantity;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public BigDecimal getTotalCalculatedAmount() {
-        return totalCalculatedAmount;
+    public String getBase() {
+        return base;
     }
 
-    public int getPort() {
-        return port;
+    public void setBase(String base) {
+        this.base = base;
     }
+
+    public Map<String, BigDecimal> getRates() {
+        return rates;
+    }
+
+    public void setRates(Map<String, BigDecimal> rates) {
+        this.rates = rates;
+    }
+
+    /*
+    {
+    disclaimer: "Usage subject to terms: https://openexchangerates.org/terms",
+    license: "https://openexchangerates.org/license",
+    timestamp: 1341936000,
+    base: "USD",
+    rates: {
+        AED: 3.672914,
+        AFN: 48.337601,
+        ALL: 111.863334
+        /* ... */
 }
